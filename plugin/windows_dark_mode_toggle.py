@@ -38,6 +38,17 @@ class WindowsDarkModeToggle(Flox):
     def set_theme_state(self, key, value):
         self.run_cmd(['powershell.exe', '-command', f'Set-ItemProperty -Path {REG_PATH} -Name {key} -Value {value}'])
 
+    def toggle_system_theme(self):
+        if self.system_uses_light_theme():
+            self.set_theme_state('SystemUsesLightTheme', '0')
+        else:
+            self.set_theme_state('SystemUsesLightTheme', '1')
+    def toggle_app_theme(self):
+        if self.apps_use_light_theme():
+            self.set_theme_state('AppsUseLightTheme', '0')
+        else:
+            self.set_theme_state('AppsUseLightTheme', '1')
+
     def dark_mode_on(self):
         self.set_theme_state('SystemUsesLightTheme', '0')
         self.set_theme_state('AppsUseLightTheme', '0')
@@ -62,6 +73,18 @@ class WindowsDarkModeToggle(Flox):
         )
 
     def context_menu(self, data):
+        self.add_item(
+            title="Toggle Application theme",
+            subtitle="Toggles Application theme between Light & Dark modes.",
+            icon=LIGHT_DARK_ICON,
+            method="toggle_app_theme"
+        )
+        self.add_item(
+            title="Toggle System theme",
+            subtitle="Toggles System theme between Light & Dark modes.",
+            icon=LIGHT_DARK_ICON,
+            method="toggle_system_theme"
+        )           
         self.add_item(
             title="Force Light Mode",
             subtitle="Toggles System theme to Light mode.",
