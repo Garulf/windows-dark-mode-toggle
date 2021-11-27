@@ -4,7 +4,7 @@
   "Name": "Windows Dark Mode Toggle",
   "Description": "Toggle Window's Dark & Light modes",
   "Author": "Garulf",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "Language": "python",
   "Website": "https://github.com/Garulf/windows-dark-mode-toggle",
   "IcoPath": "./icon/light-dark.png",
