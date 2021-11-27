@@ -46,10 +46,16 @@ class WinTheme(object):
         else:
             self._set_system_theme(ON)
 
+    def set_dark_mode(self):
+        self._set_system_theme(OFF)
+        self._set_app_theme(OFF)
+
+    def set_light_mode(self):
+        self._set_system_theme(ON)
+        self._set_app_theme(ON)
+
     def toggle_theme(self):
         if self.get_system_theme() or self.get_apps_theme():
-            self._set_system_theme(OFF)
-            self._set_app_theme(OFF)
+            self.set_dark_mode()
         else:
-            self._set_system_theme(ON)
-            self._set_app_theme(ON)
+            self.set_light_mode()
