@@ -10,7 +10,6 @@ class WinTheme(object):
     def get_apps_theme(self):
         key = reg.OpenKey(reg.HKEY_CURRENT_USER, SUBKEY)
         value = reg.QueryValueEx(key, "AppsUseLightTheme")[0]
-        print(value)
         if value == ON:
             return True
         else:
