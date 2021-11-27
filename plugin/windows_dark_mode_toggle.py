@@ -11,17 +11,7 @@ DARK_ICON = path.join(ICON_PATH, "dark.png")
 LIGHT_ICON = path.join(ICON_PATH, "light.png")
 
 
-class WindowsDarkModeToggle(Flox):
-
-    def __init__(self):
-        self._wintheme = WinTheme()
-        self.toggle_theme = self._wintheme.toggle_theme
-        self.toggle_system_theme = self._wintheme.toggle_system_theme
-        self.toggle_app_theme = self._wintheme.toggle_apps_theme
-        super().__init__()
-
-    def __getattr__(self, name):
-       return self._wintheme.__getattribute__(name)
+class WindowsDarkModeToggle(Flox, WinTheme):
 
     def query(self, query):
         self.logger.info(ICON_PATH)
@@ -49,13 +39,13 @@ class WindowsDarkModeToggle(Flox):
             title="Force Light Mode",
             subtitle="Toggles System theme to Light mode.",
             icon=LIGHT_ICON,
-            method="dark_mode_off"
+            method="set_light_mode"
         )
         self.add_item(
             title="Force Dark Mode",
             subtitle="Toggles System theme to Dark mode.",
             icon=DARK_ICON,
-            method="dark_mode_on"
+            method="set_dark_mode"
         )
 
 if __name__ == "__main__":
