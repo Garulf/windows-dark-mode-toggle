@@ -48,8 +48,6 @@ def test_set_dark_mode():
     current_state = theme.get_system_theme()
     # Set the theme to dark mode
     theme.set_dark_mode()
-    # Make sure the theme has changed
-    assert theme.get_system_theme() != current_state
     # Make sure the theme is dark
     assert theme.get_system_theme() == False
     # Set the theme back to the original state
@@ -62,8 +60,6 @@ def test_set_light_mode():
     current_state = theme.get_system_theme()
     # Set the theme to light mode
     theme.set_light_mode()
-    # Make sure the theme has changed
-    assert theme.get_system_theme() != current_state
     # Make sure the theme is light
     assert theme.get_system_theme() == True
     # Set the theme back to the original state
