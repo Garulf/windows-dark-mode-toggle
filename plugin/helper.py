@@ -56,12 +56,10 @@ class WinTheme(object):
     def set_dark_mode(self):
         self._set_system_theme(DARK)
         self._set_app_theme(DARK)
-        self.restart_explorer()
 
     def set_light_mode(self):
         self._set_system_theme(LIGHT)
         self._set_app_theme(LIGHT)
-        self.restart_explorer()
 
     def toggle_theme(self):
         if self.get_system_theme() or self.get_apps_theme():
