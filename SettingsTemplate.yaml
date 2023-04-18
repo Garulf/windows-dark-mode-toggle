@@ -1,0 +1,7 @@
+body:
+  - type: input
+    attributes:
+      name: adm_path
+      label: "AutoDarkMode path"
+      defaultValue: "%USERPROFILE%/AppData/Local/Programs/AutoDarkMode"
+      description: Path at which AutoDarkMode is installed
