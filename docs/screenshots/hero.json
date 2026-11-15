@@ -1,0 +1,31 @@
+{
+  "keyword": "wt",
+  "query": "",
+  "icon": "../../data/icon.png",
+  "max_results": 4,
+  "selection": 3,
+  "results": [
+    {
+      "title": "Toggle Application theme",
+      "subtitle": "Toggles Application theme between Light & Dark modes.",
+      "icon": "../../src/plugin/icons/light-dark.png"
+    },
+    {
+      "title": "Toggle System theme",
+      "subtitle": "Toggles System theme between Light & Dark modes.",
+      "icon": "../../src/plugin/icons/light-dark.png"
+    },
+    {
+      "title": "Force Light Mode",
+      "subtitle": "Toggles System theme to Light mode.",
+      "icon": "../../src/plugin/icons/light.png"
+    },
+    {
+      "title": "Force Dark Mode",
+      "subtitle": "Toggles System theme to Dark mode.",
+      "icon": "../../src/plugin/icons/dark.png"
+    }
+  ],
+  "query_suggestion": "",
+  "show_caret": false
+}
