@@ -1,0 +1,16 @@
+{
+  "keyword": "wt",
+  "query": "",
+  "icon": "../../data/icon.png",
+  "max_results": 1,
+  "selection": 0,
+  "results": [
+    {
+      "title": "Toggle Dark Mode",
+      "subtitle": "Toggles System theme between Dark & Light.",
+      "icon": "../../src/plugin/icons/light-dark.png"
+    }
+  ],
+  "query_suggestion": "",
+  "show_caret": false
+}
