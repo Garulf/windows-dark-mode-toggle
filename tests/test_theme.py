@@ -60,6 +60,16 @@ def test_windows_registry_reads_personalize_key(fake_winreg):
     ]
 
 
+def test_windows_registry_reads_a_missing_value_as_light(fake_winreg, monkeypatch):
+    monkeypatch.setattr(fake_winreg, "QueryValueEx", missing_value)
+
+    assert WindowsRegistry().read(APPS) == LIGHT
+
+
+def missing_value(key, name):
+    raise FileNotFoundError(2, "The system cannot find the file specified")
+
+
 def test_windows_registry_writes_dword_to_personalize_key(fake_winreg):
     WindowsRegistry().write(APPS, 1)
 

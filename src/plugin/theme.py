@@ -19,8 +19,11 @@ class WindowsRegistry:
     def read(self, name: str) -> int:
         import winreg
 
-        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, PERSONALIZE_KEY) as key:
-            return winreg.QueryValueEx(key, name)[0]
+        try:
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, PERSONALIZE_KEY) as key:
+                return winreg.QueryValueEx(key, name)[0]
+        except FileNotFoundError:
+            return LIGHT
 
     def write(self, name: str, value: int) -> None:
         import winreg
